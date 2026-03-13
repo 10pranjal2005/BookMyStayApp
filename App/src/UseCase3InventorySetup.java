@@ -1,12 +1,12 @@
 import java.util.HashMap;
 import java.util.Map;
 
-/* Inventory manager responsible for room availability */
 class RoomInventory {
 
     private HashMap<String, Integer> inventory;
 
     public RoomInventory() {
+
         inventory = new HashMap<>();
 
         inventory.put("Single Room", 5);
@@ -18,13 +18,12 @@ class RoomInventory {
         return inventory.getOrDefault(roomType, 0);
     }
 
-    public void updateAvailability(String roomType, int newCount) {
-        if (inventory.containsKey(roomType)) {
-            inventory.put(roomType, newCount);
-        }
+    public void updateAvailability(String roomType, int count) {
+        inventory.put(roomType, count);
     }
 
     public void displayInventory() {
+
         System.out.println("===== Current Room Inventory =====");
 
         for (Map.Entry<String, Integer> entry : inventory.entrySet()) {
@@ -32,8 +31,6 @@ class RoomInventory {
         }
     }
 }
-
-/* Application entry point for UC3 */
 
 public class UseCase3InventorySetup {
 
